@@ -14,6 +14,14 @@ class Cursor {
 
   }
 
+  pos(){
+    return [this.row, this.col];
+  }
+
+  _printCoord(){
+    console.log(`Row: ${this.row} , Col: ${this.col}`);
+  }
+
   resetBackgroundColor() {
     Screen.setBackgroundColor(this.row, this.col, this.gridColor);
   }
@@ -23,20 +31,41 @@ class Cursor {
   }
 
   up() {
-    // Move cursor up
+    if(this.row > 0){
+      this.resetBackgroundColor();
+      this.row -= 1;
+      this.setBackgroundColor()
+    }
+    // this._printCoord()
   }
 
   down() {
-    // Move cursor down
+    if(this.row < this.numRows - 1){
+      this.resetBackgroundColor();
+      this.row += 1;
+      this.setBackgroundColor()
+    }
+    // this._printCoord()
   }
 
   left() {
-    // Move cursor left
+    if(this.col > 0 ){
+      this.resetBackgroundColor();
+      this.col -= 1;
+      this.setBackgroundColor()
+    }
+    // this._printCoord()
   }
 
   right() {
-    // Move cursor right
+    if(this.col < this.numCols - 1){
+      this.resetBackgroundColor();
+      this.col += 1;
+      this.setBackgroundColor()
+    }
+    // this._printCoord()
   }
+
 
 }
 
