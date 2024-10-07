@@ -35,8 +35,7 @@ class TTT {
   cursorUp() {
     this.cursor.up();
     Screen.render();
-    this.cursor._printCoord()
-    console.log(`Grid: ${Screen.grid}`);
+    this.cursor._printCoord();
     Screen.printCommands();
   }
   cursorDown() {
